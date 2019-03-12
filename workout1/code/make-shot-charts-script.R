@@ -2,7 +2,7 @@ library("ggplot2")
 library("jpeg")
 library("grid")
 library("dplyr")
-setwd("C:/Users/John/Desktop/workout01/data")
+#setwd("C:/Users/John/Desktop/hw-stat133/workout1/data")
 source("../code/make-shots-data-script.r")
 
 
@@ -70,5 +70,12 @@ gsw_shot_charts <- ggplot(data=gsw_shots) +
 ggsave("../images/gsw-shot-charts.pdf",width=8,height=7)
 
 
+gsw_shot_charts <- ggplot(data=gsw_shots) +
+  annotation_custom(court_image, -250, 250, -50, 420) +
+  geom_point(aes(x = x, y = y, color = shot_made_flag)) +
+  ylim(-50, 420) + facet_wrap(~ name)
+#ggtitle('Shot Chart: Draymond Green (2016 season)') +
+theme_minimal()
 
+ggsave("../images/gsw-shot-charts.png",width=8,height=7)
 

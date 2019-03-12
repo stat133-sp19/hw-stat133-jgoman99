@@ -4,7 +4,7 @@
 #description: a short description of what the script is about
 #input(s): what are the inputs required by the script?
 #output(s): what are the outputs created when running the script?
-setwd("C:/Users/John/Desktop/workout01/data")
+#setwd("C:/Users/John/Desktop/hw-stat133/workout1/data") 
 
 curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
 iguodala <- read.csv("../data/andre-iguodala.csv", stringsAsFactors = FALSE)
@@ -60,9 +60,9 @@ sink(file="../output/klay-thompson-summary.txt")
 print(sink_name)
 sink()
 
-shots_data <- rbind(summary(green),summary(curry),summary(thompson),summary(iguodala),summary(durant))
-
-write.csv(shots_data,file="../output/shots_data.csv")
+#shots_data <- rbind(summary(green),summary(curry),summary(thompson),summary(iguodala),summary(durant))
+shots_data <- rbind(green,curry,thompson,iguodala,durant)
+write.csv(shots_data,file="../data/shots_data.csv")
 
 sink_name <- summary(shots_data)
 sink("../output/shots-data-summary.txt")
