@@ -1,5 +1,5 @@
-
 ###DO I NEED STOPS FOR THESE FUNCTIONS?
+###Ran basic tests, checked out
 
 #private function, returns binomial mean
 aux_mean <- function(trials,prob)

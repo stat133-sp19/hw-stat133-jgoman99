@@ -1,5 +1,3 @@
-###THIS IS NOT AN END RESULT!!!!!
-###I'm NOT SURE WHAT THE R FILESTRUCTURE SHOULD LOOK LIKE, THIS IS A DUMP FOR NOW
 
 #private function, checks if 0 <= prob <=1
 
@@ -31,7 +29,17 @@ check_trials <- function(trials)
 
 
 #private function, checks if successes are less than trials
-#success vectorized
-#trials int
-###CHECK SUCCESSES FIGURE OUT INPUTS
+check_successes <- function(successes,trials)
+{
+  x <- successes > trials
+  if (sum(x) == 0)
+  {
+    return(TRUE)
+  }
+  else
+  {
+    stop('successes cannot be greater than trials')
+  }
+}
+
 
