@@ -1,6 +1,6 @@
 
 #Private function to aid in vectorization
-bin_find <- function(successes,trials)
+bin_find <- function(trials,successes)
 {
   if (successes > trials)
   {
@@ -24,5 +24,5 @@ bin_find <- function(successes,trials)
 #' @export
 bin_choose <- function(successes, trials)
 {
-  return(sapply(successes,bin_find,trials))
+  return(sapply(trials,bin_find,successes))
 }

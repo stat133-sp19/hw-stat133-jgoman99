@@ -6,11 +6,10 @@ library("ggplot2")
 #' @param prob, the probability of a success
 #' @return returns a data frame of class "bindis" of probabilities
 #' @examples
-#' bin_distribution(trials = 5L, prob = 0.5)
-#' bin_distribution(3L, .3)
+#' bindis(trials = 5L, prob = 0.5)
 #' @export
 
-bin_distribution <- function(trials,prob)
+bindis <- function(trials,prob)
 {
   x<- data.frame(0:trials,bin_probability(0:trials,trials,prob))
   y <- x
@@ -20,7 +19,7 @@ bin_distribution <- function(trials,prob)
 }
 
 #' @export
-plot <- function(bindis)
+plot.bindis <- function(bindis)
 {
   ggplot(data=bindis, aes(x=successes, y=probability)) +
     geom_bar(stat="identity") +ggtitle("binomial distribution")

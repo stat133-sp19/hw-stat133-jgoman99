@@ -6,11 +6,11 @@ library("ggplot2")
 #' @param prob, the probability of a success
 #' @return returns a data frame of class "bincum" of probability density
 #' @examples
-#' bin_cumulative(trials = 5L, prob = 0.5)
-#' bin_cumulative(3L, .3)
+#' bincum(trials = 5L, prob = 0.5)
+#' bincum(3L, .3)
 #' @export
 
-bin_cumulative <- function(trials,prob)
+bincum <- function(trials,prob)
 {
   x<- data.frame(0:trials,bin_probability(0:trials,trials,prob))
   y <- x
@@ -21,7 +21,7 @@ bin_cumulative <- function(trials,prob)
 }
 
 #' @export
-plot <- function(bincum)
+plot.bincum <- function(bincum)
 {
   ggplot(data=bincum, aes(x=successes, y=cumulative)) +
     geom_line() + geom_point() + ggtitle("cumulative binomial distribution")

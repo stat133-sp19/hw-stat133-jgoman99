@@ -3,13 +3,13 @@
 
 check_prob <- function(prob)
 {
-  if(0 <= prob && prob <= 1)
+  if(0 <= prob && prob <= 1 && length(prob)==1)
   {
     return(TRUE)
   }
   else
   {
-    stop("prob has to be a number betwen 0 and 1")
+    stop("prob has to be a number betwen 0 and 1 & must be length 1")
   }
 }
 
