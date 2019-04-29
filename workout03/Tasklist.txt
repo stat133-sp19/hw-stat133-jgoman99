@@ -1,0 +1,4 @@
+###Check if Integer needed for checker. Doesn't seem like rest of code needs integer. Unclear on part of instructor.
+###Is there a way to set (int = 5L) specfic character type
+
+where to put dependencies?

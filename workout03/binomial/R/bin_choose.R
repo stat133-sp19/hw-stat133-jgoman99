@@ -2,7 +2,7 @@
 #Private function to aid in vectorization
 bin_find <- function(trials,successes)
 {
-  if (successes > trials)
+  if (sum(successes > trials)!=0)
   {
     stop("There can't be more successes than trials")
   }

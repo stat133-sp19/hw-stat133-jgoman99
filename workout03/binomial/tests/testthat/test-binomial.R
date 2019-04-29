@@ -13,7 +13,7 @@ test_that("bin_choose returns error if invalid input", {
 })
 
 context("Checking bin probability")
-test_that("bin_probability returns expected value",{
+test_that("bin_probability returns expected value", {
 
   expect_equal(bin_probability(3L,4L,.4),.1536)
   expect_equal(as.numeric(bin_probability(3L,4:6,.4)),as.numeric(c(0.15360,0.23040,0.27648)))
@@ -29,8 +29,10 @@ test_that("bin_probability returns error if invalid input", {
 
 context("Checking bin distribution")
 test_that("bindis returns expected value",{
-
-  expect_equal(bindis(2L,.4)[2],list(.36,.48,.16))
+  x <- data.frame(c(.36,.48,.16))
+  names(x) <- c("probability")
+  class(x) <- c("bindis","data.frame")
+  expect_equal(bindis(2L,.4)[2],x)
 })
 
 test_that("bin_probability returns error if invalid input", {
@@ -43,8 +45,10 @@ test_that("bin_probability returns right length ", {
 
 context("Checking bin cumulative")
 test_that("bincum returns expected value",{
-
-  expect_equal(bincum(2L,.4)[3],list(.36,.84,1.00))
+  x <- data.frame(c(.36,.84,1.00))
+  names(x) <- c("cumulative")
+  class(x) <- c("bincum","data.frame")
+  expect_equal(bincum(2L,.4)[3],x)
 })
 
 test_that("bincum returns error if invalid input", {
