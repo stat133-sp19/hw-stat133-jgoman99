@@ -1,0 +1,92 @@
+---
+title: "README"
+author: "John Friedman"
+date: "4/29/2019"
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+## Overview
+
+`"binomial"` is a [R](http://www.r-project.org/) package containing functions to simulate and graph the binomial distribution
+
+* `bin_choose` returns combinations of successes and trials
+* `bin_kurtosis` returns kurtosis given number of trials and probability
+* `bin_mean` returns mean given number of trials and probability
+* `bin_mode` returns mode given number of trials and probability
+* `bin_skewness` returns skewness given number of trials and probability
+* `bin_variance` returns variance given number of trials and probability
+* `bin_probability` returns probability given number of successes,trials and  probability
+* `binvar` creates an object of class Binomial variable
+* `bindis` creates a data frame of successes by probability
+* `plot.bindis` plots bindis objects
+* `bincum` creates a data frame of successes summed over probability
+* `plot.bincum` plots bincum objects
+
+
+
+
+## Motivation
+
+This package was made for the Class Stat 133 at UC Berkeley.
+
+
+## Installation
+
+Use `"devtools"` to install from github:
+
+```r
+# development version from GitHub:
+#install.packages("devtools") 
+# install "binomial" (no vignettes)
+devtools::install_github("https://github.com/stat133-sp19/hw-stat133-jgoman99/tree/master/workout03")
+# install "binomial" (has vignettes)
+devtools::install_github("https://github.com/stat133-sp19/hw-stat133-jgoman99/tree/master/workout03", build_vignettes = TRUE)
+```
+
+
+## Usage
+
+```{r}
+library(binomial)
+library(ggplot2)
+#bin choose
+bin_choose(1,4)
+
+#bin kurtosis
+bin_kurtosis(3,.3)
+
+#bin mode 
+bin_mode(4,.3)
+
+#bin mean
+bin_mean(4,.5)
+
+#bin skewness
+bin_skewness(4,.2)
+
+#bin variance
+bin_variance(3,.5)
+
+#bin probability
+bin_probability(4,5,.4)
+
+#bin variance
+binvar(4,.4)
+
+#bin distribution
+bindis(4,.2)
+plot(bindis(4,.2))
+
+#bin cumulative
+bincum(6,.4)
+plot(bincum(6,.4))
+```
+
