@@ -8,6 +8,7 @@ library("ggplot2")
 #' @examples
 #' bincum(trials = 5L, prob = 0.5)
 #' bincum(3L, .3)
+#' plot.bincum(bincum(2,.4))
 #' @export
 
 bincum <- function(trials,prob)

@@ -1,0 +1,58 @@
+---
+title: "introduction"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(binomial)
+library(ggplot2)
+```
+
+## The Binomial package simulates the binomial distribution and provides a way to visualize the distribution.
+ 
+### The bin_choose function finds the number of combination for a given number of trials and successes, with successes vectorized
+
+```{r}
+bin_choose(successes=5, trials=7)
+bin_choose(successes=1:5, trials=7)
+
+```
+
+### The binomial probability function finds the probability for a given number of successes given trials and probability. Succeses is vectorized.
+
+```{r}
+bin_probability(successes = 2, trials = 5L, prob = 0.5)
+
+bin_probability(successes = 0:2, trials = 5L, prob = 0.5)
+```
+
+### The binomial distribution function finds the distribution of a given number of trials for a given probability. Along with a helpful plot method
+
+```{r}
+x <- bindis(trials = 5L, prob = 0.5)
+
+plot(x)
+```
+
+### The binomial cumulative function finds the cumulative sum of the distribution at every success. It includes a plot method
+
+```{r}
+y <- bincum(trials = 5L, prob = 0.5)
+
+plot(y)
+
+```
+
+
+

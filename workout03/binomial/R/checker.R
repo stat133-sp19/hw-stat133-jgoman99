@@ -17,7 +17,7 @@ check_prob <- function(prob)
 
 check_trials <- function(trials)
 {
-  if (typeof(trials) == "integer" && trials >=0)
+  if (as.integer(trials)==trials && trials >= 0)
   {
     return(TRUE)
   }

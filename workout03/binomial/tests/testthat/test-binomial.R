@@ -21,7 +21,7 @@ test_that("bin_probability returns expected value", {
 })
 test_that("bin_probability returns error if invalid input", {
 
-  expect_error(bin_probability(5,5,.5))
+  expect_error(bin_probability(5))
   expect_error(bin_probability(6L,5L,.5))
   expect_error(bin_probability(5L,5L,-.5))
 })
@@ -35,11 +35,11 @@ test_that("bindis returns expected value",{
   expect_equal(bindis(2L,.4)[2],x)
 })
 
-test_that("bin_probability returns error if invalid input", {
+test_that("bindis returns error if invalid input", {
 
-  expect_error(bin_probability(5,5,.5))
+  expect_error(bindis(1))
 })
-test_that("bin_probability returns right length ", {
+test_that("bindis returns right length ", {
   expect_length(bindis(2L,.4),2)
 })
 

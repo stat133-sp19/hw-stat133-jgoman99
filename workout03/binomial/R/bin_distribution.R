@@ -7,6 +7,8 @@ library("ggplot2")
 #' @return returns a data frame of class "bindis" of probabilities
 #' @examples
 #' bindis(trials = 5L, prob = 0.5)
+#' bindis(trials = 3L, prob = 0.1)
+#' plot.bindis(bindis(4,.1))
 #' @export
 
 bindis <- function(trials,prob)
